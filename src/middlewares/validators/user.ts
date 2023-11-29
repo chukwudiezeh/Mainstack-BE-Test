@@ -21,6 +21,7 @@ const validatePhoneNumberExists = async (value: string): Promise <boolean> => {
   return true
 }
 
+//validation chain for creating user
 export const validateCreateUserBody = [
   body('email').notEmpty().withMessage("Email is required").bail().isString().withMessage("Invalid email provided").bail().isEmail().withMessage("Invalid email provided").bail().custom(validateEmailExists),
   body('firstName').notEmpty().withMessage("firstname is required").bail().isString().withMessage("Invalid firstname provided"),
@@ -38,6 +39,7 @@ export const validateCreateUserBody = [
   },
 ];
 
+//validation chain for updating user
 export const validateLoginUserBody = [
   body('email').notEmpty().withMessage("Email is required").bail().isString().withMessage("Invalid email provided").bail().isEmail().withMessage("Invalid email provided"),
   body('password').notEmpty().withMessage("Password is required").bail().isLength({ min: 6 }).withMessage("Invalid password"),

@@ -48,14 +48,6 @@ class UserService {
         }
     }
 
-    // public static async comparePassword (plainPassword: string, hashedPassword: string): Promise <boolean> {
-    //     try {
-    //         return await bcrypt.compare(plainPassword, hashedPassword);
-    //     } catch (error) {
-    //         throw error;
-    //     }
-    // }
-
 }
 
 export default UserService;

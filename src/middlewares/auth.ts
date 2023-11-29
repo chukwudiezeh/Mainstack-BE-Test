@@ -10,7 +10,7 @@ declare global {
         }
     }
 }
-
+// verify Jwt token
 const authenticate = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     let authorization = req.headers.authorization;
     if (!authorization) return errorResponse(res, 401, "Unauthorized! Token not provided");

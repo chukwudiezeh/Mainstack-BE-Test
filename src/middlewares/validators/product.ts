@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
 import { errorResponse } from '../../utils/responses';
 
+//validation chain for creating products
 export const validateCreateProductBody = [
   body('name').notEmpty().withMessage("Name is required").bail().isString().withMessage("Invalid product name provided"),
   body('description').notEmpty().withMessage("Description is required").bail().isString().withMessage("Invalid description provided"),
@@ -17,6 +18,7 @@ export const validateCreateProductBody = [
   },
 ];
 
+//validation chain for updating products
 export const validateUpdateProductBody = [
   param('productId').escape().notEmpty().withMessage("Produuct id is required").bail().isMongoId().withMessage('Invalid product id'),
   body('name').optional().isString().withMessage("Invalid product name provided"),
@@ -33,6 +35,7 @@ export const validateUpdateProductBody = [
   },
 ];
 
+//validation chain fot productId when passed as a path variable
 export const validateGetProductQuery = [
   param('productId').escape().notEmpty().withMessage("Produuct id is required").bail().isMongoId().withMessage('Invalid product id'),
   (req: Request, res: Response, next: NextFunction) => {

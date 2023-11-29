@@ -7,6 +7,7 @@ class ProductContoller {
 
     public static async allProducts (req: Request, res: Response): Promise <Response> {
         try {
+            //returns product created by the authenticated user
              const products = await ProductService.findAllProductsByUser(req.user._id);
 
              return successResponse(res, 200, "products retrieved successfully", products);

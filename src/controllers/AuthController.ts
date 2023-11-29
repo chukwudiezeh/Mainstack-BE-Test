@@ -29,7 +29,7 @@ class AuthContoller {
       if (user === null) {
         return errorResponse(res, 401, "Invalid email or password");
       }
-
+      //Check Password is a match
       const isPasswordMatch = await AuthService.comparePassword(
         validatedData.password,
         user.password
@@ -39,6 +39,7 @@ class AuthContoller {
         return errorResponse(res, 401, "Invalid email or password");
       }
 
+      //generate a signed token for loginr
       const token = user.getSignedJwtToken();
 
       return successResponse(res, 200, "User authenticated", { user, token });
