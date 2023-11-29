@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateRandomPhone = exports.generateRandomEmail = void 0;
 const generateRandomEmail = () => {
-    const username = Math.random().toString(36).substring(2, 10);
+    const username = Math.random().toString(36).substring(2, 9);
     const domain = 'storefront.com';
-    return `${username}@${domain}`;
+    return `c${username}@${domain}`;
 };
 exports.generateRandomEmail = generateRandomEmail;
 const generateRandomPhone = () => {
