@@ -11,10 +11,13 @@
 ```
 git clone https://github.com/chukwudiezeh/Mainstack-BE-Test.git
 ```
-# Wanna Run with Docker?
-- On your terminal, navigate into the project folder and run the following commmands:
+- On your terminal, navigate into the project folder.
+- Create a new file `.env` in the project root folder. Copy the contents of `.env.sample` file and paste into it
+
+### Wanna Run with Docker?
+- after creating the `.env` file, run the following commmands:
   
-  - Makes the shell file executable
+  Makes the shell file executable
     ```
     chmod +x bin/start_disposable.sh
     ```
@@ -22,18 +25,18 @@ git clone https://github.com/chukwudiezeh/Mainstack-BE-Test.git
     ```
       bin/start_disposable.sh
     ```
-The above command handles everything from building the docker image to running the container. 
-It also exposes the bash after starting the container.
+  The above command handles everything from building the docker image to running the container. 
+  It also exposes the bash after starting the container.
 
-then run this command in the bash:
-```
-npm run start
-```
-- then on another terminal tab, run 
-```
-docker ps
-```
-to see the list of active containers. copy the IP:port exposed by the container and paste on your browser, you should get a succes json message.
+  - Then run this command in the bash:
+    ```
+    npm run start
+    ```
+  - Then on another terminal tab, run 
+    ```
+    docker ps
+    ```
+  - To see the list of active containers. copy the IP:port exposed by the container and paste on your browser, you should get a succes json message.
 
 # Wanna Run directly on your Machine?
 - on you terminal, navigate into the project folder and run the following commands:
