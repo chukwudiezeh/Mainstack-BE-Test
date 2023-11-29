@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../src/server";
 
 //using a pre-seeded jwt token
-const accessToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTYyZDRmZTg4Nzg3MzBlODY2NmYzYjEiLCJlbWFpbCI6ImNlemVoOTZAZ21haWwuY29tIiwiaWF0IjoxNzAxMDIzNDI5LCJleHAiOjE3MDE2MjgyMjl9.Lyd4nQswhPVnppC5kmx81iRdviZjV4EekgoEgEItLi0";
+const accessToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTY3NDJhZjE4NzdhNGM0MTZiM2JlNzQiLCJlbWFpbCI6ImN5YjJkbGFrQHN0b3JlZnJvbnQuY29tIiwiaWF0IjoxNzAxMjk1NzQ4LCJleHAiOjE3MzI4MzE3NDh9.jorDLpqD4kVcpi0Lgf4TKtUA2vJzb4EjeQLE9QwF13o";
 describe ("Product Management", () => {
     //get All products for a user
     describe("Get all user products", () => {
