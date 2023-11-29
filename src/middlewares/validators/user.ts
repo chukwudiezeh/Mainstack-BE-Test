@@ -3,6 +3,7 @@ import { body, validationResult } from 'express-validator';
 import { errorResponse } from '../../utils/responses';
 import UserService from '../../services/UserService';
 
+//custom validator for user email
 const validateEmailExists = async (value: string): Promise <boolean> => {
   const user = await UserService.findUserByEmail(value);
   if (user != null){
@@ -11,6 +12,7 @@ const validateEmailExists = async (value: string): Promise <boolean> => {
   return true
 }
 
+// custom vvalidator for user phone number
 const validatePhoneNumberExists = async (value: string): Promise <boolean> => {
   const user = await UserService.findUserByPhoneNumber(value);
   if (user != null){

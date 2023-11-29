@@ -31,7 +31,7 @@ npm run start
 ```
 
 ## Unit Tests
-- once you're within the bash exposed after creating the container, use the commands below as fits:
+- once you're within the bash exposed after creating the container, use the commands below:
   - To run tests one module at a time
   ```
   npm run test -- --testPathPattern=[testFileName]
@@ -40,8 +40,3 @@ npm run start
   ```
   npm run test -- --testPathPattern=auth.test.ts
   ```
-  
-  - To run all tests at once
-    ```
-    npm run test
-    ```

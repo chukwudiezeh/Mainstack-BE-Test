@@ -16,6 +16,7 @@ exports.validateLoginUserBody = exports.validateCreateUserBody = void 0;
 const express_validator_1 = require("express-validator");
 const responses_1 = require("../../utils/responses");
 const UserService_1 = __importDefault(require("../../services/UserService"));
+//custom validator for user email
 const validateEmailExists = (value) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield UserService_1.default.findUserByEmail(value);
     if (user != null) {
@@ -23,6 +24,7 @@ const validateEmailExists = (value) => __awaiter(void 0, void 0, void 0, functio
     }
     return true;
 });
+// custom vvalidator for user phone number
 const validatePhoneNumberExists = (value) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield UserService_1.default.findUserByPhoneNumber(value);
     if (user != null) {

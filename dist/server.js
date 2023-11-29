@@ -17,7 +17,7 @@ app.use(express_1.default.json());
 app.use('/api/v1/auth', auth_1.default);
 app.use('/api/v1/products', product_1.default);
 app.get('/', (req, res) => {
-    res.status(200).send('Hello, Chukwudi\'s Store front API');
+    res.status(200).send({ success: true, message: 'Hello, Chukwudi\'s Store front API' });
 });
 app.listen(port, () => {
     // console.log(`Server is running on http://localhost:${port}`);
