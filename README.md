@@ -38,7 +38,7 @@ git clone https://github.com/chukwudiezeh/Mainstack-BE-Test.git
     ```
   - To see the list of active containers. copy the IP:port exposed by the container and paste on your browser, you should get a succes json message.
 
-# Wanna Run directly on your Machine?
+### Wanna Run directly on your Machine?
 - on you terminal, navigate into the project folder and run the following commands:
   - To install packages
     ```
