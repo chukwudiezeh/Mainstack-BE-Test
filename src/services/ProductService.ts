@@ -35,7 +35,7 @@ class ProductService {
         }
     }
 
-    public static async deleteProductById (productId: any): Promise<ProductDocument|null> {
+    public static async deleteProductById (productId: string): Promise<any> {
         try {
             return await Product.findOneAndDelete({_id:productId});
         } catch(error) {

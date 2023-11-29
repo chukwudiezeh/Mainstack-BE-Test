@@ -1,6 +1,7 @@
 import request from "supertest";
 import app from "../src/server";
 
+//using a pre-seeded jwt token
 const accessToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTYyZDRmZTg4Nzg3MzBlODY2NmYzYjEiLCJlbWFpbCI6ImNlemVoOTZAZ21haWwuY29tIiwiaWF0IjoxNzAxMDIzNDI5LCJleHAiOjE3MDE2MjgyMjl9.Lyd4nQswhPVnppC5kmx81iRdviZjV4EekgoEgEItLi0";
 describe ("Product Management", () => {
     //get All products for a user
@@ -8,11 +9,14 @@ describe ("Product Management", () => {
         describe("Given that authorization failed", () => {
             it("Should return a 401 unauthorized error", async () => {
                 const res = await request(app).get("/api/v1/products");
-                expect(res.status).toBe(401)
+                expect(res.status).toBe(401);
+                expect(res.body.success).toEqual(false);
+
             })
         })
         describe("Given that authorization passed", () => {
             it("Should return a 200 success response with user products", async () => {
+                
                 const res = await request(app).get("/api/v1/products").set("Authorization", `Bearer ${accessToken}`);
                 expect(res.status).toBe(200);
                 expect(res.body.success).toEqual(true);

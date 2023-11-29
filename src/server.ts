@@ -9,11 +9,7 @@ import productRoutes from './routes/product';
 dotenv.config();
 
 const app: Application = express();
-let port: number = 0;
-
-if(process.env.NODE_ENV != "test") {
-  port = 4000;
-}
+let port: number = 4000;
 
 connectDB();
 
