@@ -14,7 +14,7 @@ git clone https://github.com/chukwudiezeh/Mainstack-BE-Test.git
 - On your terminal, navigate into the project folder.
 - Create a new file `.env` in the project root folder. Copy the contents of `.env.sample` file and paste into it
 
-### Wanna Run with Docker?
+### 1. Wanna Run with Docker?
 - after creating the `.env` file, run the following commmands:
   
   Makes the shell file executable
@@ -38,7 +38,7 @@ git clone https://github.com/chukwudiezeh/Mainstack-BE-Test.git
     ```
   - To see the list of active containers. copy the IP:port exposed by the container and paste on your browser, you should get a succes json message.
 
-### Wanna Run directly on your Machine?
+### 2. Wanna Run directly on your Machine?
 - on you terminal, navigate into the project folder and run the following commands:
   - To install packages
     ```
