@@ -11,7 +11,7 @@
 ```
 git clone https://github.com/chukwudiezeh/Mainstack-BE-Test.git
 ```
-
+# Wanna Run with Docker?
 - On your terminal, navigate into the project folder and run the following commmands:
   
   - Makes the shell file executable
@@ -29,9 +29,28 @@ then run this command in the bash:
 ```
 npm run start
 ```
+- then on another terminal tab, run 
+```
+docker ps
+```
+to see the list of active containers. copy the IP:port exposed by the container and paste on your browser, you should get a succes json message.
 
+# Wanna Run directly on your Machine?
+- on you terminal, navigate into the project folder and run the following commands:
+  - To install packages
+    ```
+    npm install
+    ```
+  - Transpile TS to JS
+    ```
+    npm run build
+    ```
+  - Run the application
+    ```
+    npm run start
+    ```
 ## Unit Tests
-- once you're within the bash exposed after creating the container, use the commands below:
+- while within the bash exposed after creating the container (If runnin with Docker) or just within your project folder on your terminal, use the commands below:
   - To run tests one module at a time
   ```
   npm run test -- --testPathPattern=[testFileName]
