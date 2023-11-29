@@ -32,6 +32,14 @@ class UserService {
         }
     }
 
+    public static async findUserByPhoneNumber (phoneNumber: string): Promise <UserDocument | null> {
+        try {
+            return await User.findOne({phoneNumber: phoneNumber});
+        } catch (error) {
+            throw error;
+        }
+    }
+
     public static async findUserById (_id: string): Promise <UserDocument | null> {
         try {
             return await User.findOne({_id});
