@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDB = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 mongoose_1.default.set('strictQuery', true);
-// Db connection
+// Establish Db connection
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     yield mongoose_1.default.connect(process.env.MONGO_DB_URL, {
         useNewUrlParser: true,

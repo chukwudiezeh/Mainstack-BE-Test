@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateGetProductQuery = exports.validateUpdateProductBody = exports.validateCreateProductBody = void 0;
 const express_validator_1 = require("express-validator");
 const responses_1 = require("../../utils/responses");
+//validation chain for creating products
 exports.validateCreateProductBody = [
     (0, express_validator_1.body)('name').notEmpty().withMessage("Name is required").bail().isString().withMessage("Invalid product name provided"),
     (0, express_validator_1.body)('description').notEmpty().withMessage("Description is required").bail().isString().withMessage("Invalid description provided"),
@@ -15,6 +16,7 @@ exports.validateCreateProductBody = [
         next();
     },
 ];
+//validation chain for updating products
 exports.validateUpdateProductBody = [
     (0, express_validator_1.param)('productId').escape().notEmpty().withMessage("Produuct id is required").bail().isMongoId().withMessage('Invalid product id'),
     (0, express_validator_1.body)('name').optional().isString().withMessage("Invalid product name provided"),
@@ -28,6 +30,7 @@ exports.validateUpdateProductBody = [
         next();
     },
 ];
+//validation chain fot productId when passed as a path variable
 exports.validateGetProductQuery = [
     (0, express_validator_1.param)('productId').escape().notEmpty().withMessage("Produuct id is required").bail().isMongoId().withMessage('Invalid product id'),
     (req, res, next) => {

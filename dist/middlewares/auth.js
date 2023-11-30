@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const responses_1 = require("../utils/responses");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const AuthService_1 = __importDefault(require("../services/AuthService"));
+// verify Jwt token
 const authenticate = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     let authorization = req.headers.authorization;
     if (!authorization)

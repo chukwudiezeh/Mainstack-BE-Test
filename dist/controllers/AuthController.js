@@ -42,10 +42,12 @@ class AuthContoller {
                 if (user === null) {
                     return (0, responses_1.errorResponse)(res, 401, "Invalid email or password");
                 }
+                //Check Password is a match
                 const isPasswordMatch = yield AuthService_1.default.comparePassword(validatedData.password, user.password);
                 if (isPasswordMatch === false) {
                     return (0, responses_1.errorResponse)(res, 401, "Invalid email or password");
                 }
+                //generate a signed token for loginr
                 const token = user.getSignedJwtToken();
                 return (0, responses_1.successResponse)(res, 200, "User authenticated", { user, token });
             }

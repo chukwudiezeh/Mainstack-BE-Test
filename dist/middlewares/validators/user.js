@@ -32,6 +32,7 @@ const validatePhoneNumberExists = (value) => __awaiter(void 0, void 0, void 0, f
     }
     return true;
 });
+//validation chain for creating user
 exports.validateCreateUserBody = [
     (0, express_validator_1.body)('email').notEmpty().withMessage("Email is required").bail().isString().withMessage("Invalid email provided").bail().isEmail().withMessage("Invalid email provided").bail().custom(validateEmailExists),
     (0, express_validator_1.body)('firstName').notEmpty().withMessage("firstname is required").bail().isString().withMessage("Invalid firstname provided"),
@@ -46,6 +47,7 @@ exports.validateCreateUserBody = [
         next();
     },
 ];
+//validation chain for updating user
 exports.validateLoginUserBody = [
     (0, express_validator_1.body)('email').notEmpty().withMessage("Email is required").bail().isString().withMessage("Invalid email provided").bail().isEmail().withMessage("Invalid email provided"),
     (0, express_validator_1.body)('password').notEmpty().withMessage("Password is required").bail().isLength({ min: 6 }).withMessage("Invalid password"),

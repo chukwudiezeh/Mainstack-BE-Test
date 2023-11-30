@@ -19,6 +19,7 @@ class ProductContoller {
     static allProducts(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
+                //returns product created by the authenticated user
                 const products = yield ProductService_1.default.findAllProductsByUser(req.user._id);
                 return (0, responses_1.successResponse)(res, 200, "products retrieved successfully", products);
             }
